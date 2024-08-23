@@ -1,0 +1,104 @@
+/* Light Mode Styles */
+body {
+    background-color: #f9f9f9; /* Light background */
+    color: #333; /* Dark text color */
+}
+
+a {
+    color: #1d4ed8; /* Link color */
+}
+
+a:hover {
+    color: #2563eb; /* Link hover color */
+}
+
+/* Dark Mode Styles */
+body.dark {
+    background-color: #1a202c; /* Dark background */
+    color: #e2e8f0; /* Light text color */
+}
+
+body.dark a {
+    color: #3b82f6; /* Dark mode link color */
+}
+
+body.dark a:hover {
+    color: #60a5fa; /* Dark mode link hover color */
+}
+
+nav {
+    background-color: #2d3748; /* Dark background for navbar */
+}
+
+nav a {
+    color: #e2e8f0; /* Light text color for navbar links */
+}
+
+nav a:hover {
+    color: #cbd5e1; /* Light hover color for navbar links */
+}
+
+section#hero {
+    background-color: #f1f5f9; /* Light background for hero section */
+    color: #333; /* Dark text color for hero section */
+}
+
+body.dark section#hero {
+    background-color: #2d3748; /* Dark background for hero section */
+    color: #e2e8f0; /* Light text color for hero section */
+}
+
+/* Specific styles for hero section text */
+section#hero h1 {
+    color: #1f2937; /* Dark text color for hero heading in light mode */
+}
+
+body.dark section#hero h1 {
+    color: #e2e8f0; /* Light text color for hero heading in dark mode */
+}
+
+section#hero p {
+    color: #4a5568; /* Medium dark text color for hero paragraph in light mode */
+}
+
+body.dark section#hero p {
+    color: #cbd5e1; /* Light medium text color for hero paragraph in dark mode */
+}
+
+/* Button styles in hero section */
+section#hero a {
+    background-color: #1d4ed8; /* Blue background for button in light mode */
+    color: #fff; /* White text color for button in light mode */
+    font-weight: bold;
+}
+
+section#hero a:hover {
+    background-color: #2563eb; /* Darker blue background for button hover in light mode */
+}
+
+body.dark section#hero a {
+    background-color: #4b5563; /* Darker background for button in dark mode */
+    color: #e2e8f0; /* Light text color for button in dark mode */
+}
+
+body.dark section#hero a:hover {
+    background-color: #6b7280; /* Darker background on hover for button in dark mode */
+}
+
+/* General button styles for light and dark modes */
+button {
+    background-color: #4b5563; /* Dark background for button */
+    color: #fff; /* White text color for button */
+}
+
+button:hover {
+    background-color: #6b7280; /* Darker background for button hover */
+}
+
+body.dark button {
+    background-color: #374151; /* Darker button background for dark mode */
+}
+
+body.dark button:hover {
+    background-color: #4b5563; /* Darker button background on hover for dark mode */
+}

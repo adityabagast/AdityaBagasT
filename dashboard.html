@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Bagas T | Web Developer</title>
+    <!-- Link ke Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="bg-gray-800 text-white sticky top-0 shadow-md">
+        <div class="container mx-auto px-4 py-2 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold">Aditya Bagas T</a>
+            <div class="space-x-4 flex items-center">
+                <a href="#home" class="hover:text-gray-400">Home</a>
+                <a href="#about" class="hover:text-gray-400">About</a>
+                <a href="#portfolio" class="hover:text-gray-400">Portfolio</a>
+                <a href="#contact" class="hover:text-gray-400">Contact</a>
+                <button id="theme-toggle" class="ml-4 p-2 bg-gray-700 rounded-full">
+                    <svg id="theme-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Icon untuk light mode -->
+                        <path id="icon-light" d="M12 4.354V3a1 1 0 10-2 0v1.354a9 9 0 000 16.292V21a1 1 0 102 0v-1.354a9 9 0 000-16.292zM12 12a5 5 0 11-5-5 5 5 0 015 5z"></path>
+                        <!-- Icon untuk dark mode -->
+                        <path id="icon-dark" class="hidden" d="M12 3a9 9 0 100 18 9 9 0 000-18z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 h-screen flex items-center justify-center">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Hi, I'm Aditya Bagas T</h1>
+            <p class="text-xl mb-8">I'm a passionate web developer with a knack for creating sleek and functional websites. Welcome to my portfolio!</p>
+            <a href="#portfolio" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">See My Work</a>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <div class="container mx-auto px-4 py-6">
+        <!-- Konten halaman akan dimasukkan di sini -->
+    </div>
+
+    <!-- JavaScript untuk mengganti tema -->
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIconLight = document.getElementById('icon-light');
+        const themeIconDark = document.getElementById('icon-dark');
+
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark');
+            themeIconLight.classList.add('hidden');
+            themeIconDark.classList.remove('hidden');
+        } else {
+            themeIconLight.classList.remove('hidden');
+            themeIconDark.classList.add('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            const isDarkMode = document.body.classList.contains('dark');
+            if (isDarkMode) {
+                localStorage.setItem('theme', 'dark');
+                themeIconLight.classList.add('hidden');
+                themeIconDark.classList.remove('hidden');
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeIconLight.classList.remove('hidden');
+                themeIconDark.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
