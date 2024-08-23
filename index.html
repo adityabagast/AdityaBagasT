@@ -14,10 +14,13 @@
         <div class="container mx-auto px-4 py-2 flex items-center justify-between">
             <a href="#" class="text-xl font-bold">Aditya Bagas T</a>
             <div class="space-x-4 flex items-center">
-                <a href="#home" class="hover:text-gray-400">Home</a>
+                <a href="#hero" class="hover:text-gray-400">Home</a>
                 <a href="#about" class="hover:text-gray-400">About</a>
                 <a href="#portfolio" class="hover:text-gray-400">Portfolio</a>
                 <a href="#contact" class="hover:text-gray-400">Contact</a>
+                <a href="assets/files/CV_Aditya_Bagas_T.pdf" download class="download-cv">
+                    Download CV
+                </a>
                 <button id="theme-toggle" class="ml-4 p-2 bg-gray-700 rounded-full">
                     <svg id="theme-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <!-- Icon untuk light mode -->
@@ -39,12 +42,29 @@
         </div>
     </section>
 
+    <!-- About Me Section -->
+    <section id="about" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">About Me</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                I'm Aditya Bagas T, a web developer based in [Your City]. I specialize in building modern and responsive websites with a focus on clean design and optimized user experiences. My journey in web development started [X years ago], and since then, I have worked on various projects that have helped me hone my skills.
+            </p>
+            <p class="text-lg leading-relaxed mb-6">
+                I enjoy working with the latest web technologies and am always eager to learn new skills and take on new challenges. Whether it's front-end development, back-end development, or full-stack solutions, I'm passionate about creating web applications that meet client needs and exceed expectations.
+            </p>
+            <p class="text-lg leading-relaxed text-center">
+                Let's connect and create something amazing together!
+            </p>
+        </div>
+    </section>
+
     <!-- Content -->
     <div class="container mx-auto px-4 py-6">
         <!-- Konten halaman akan dimasukkan di sini -->
     </div>
 
-    <!-- JavaScript untuk mengganti tema -->
+    <!-- JavaScript untuk mengganti tema dan animasi scroll -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script>
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeIconLight = document.getElementById('icon-light');
@@ -73,6 +93,10 @@
                 themeIconDark.classList.add('hidden');
             }
         });
+
+        // Animasi scroll dengan ScrollReveal
+        ScrollReveal().reveal('#hero', { delay: 200, duration: 800 });
+        ScrollReveal().reveal('#about', { delay: 400, duration: 800 });
     </script>
 </body>
 </html>

@@ -19,11 +19,11 @@ body.dark {
 }
 
 body.dark a {
-    color: #3b82f6; /* Dark mode link color */
+    color: #cbd5e1; /* Light text color for links in dark mode */
 }
 
 body.dark a:hover {
-    color: #60a5fa; /* Dark mode link hover color */
+    color: #e2e8f0; /* Lighter text color for links on hover in dark mode */
 }
 
 nav {
@@ -38,6 +38,7 @@ nav a:hover {
     color: #cbd5e1; /* Light hover color for navbar links */
 }
 
+/* Hero Section */
 section#hero {
     background-color: #f1f5f9; /* Light background for hero section */
     color: #333; /* Dark text color for hero section */
@@ -48,7 +49,7 @@ body.dark section#hero {
     color: #e2e8f0; /* Light text color for hero section */
 }
 
-/* Specific styles for hero section text */
+/* Hero Section Text Styles */
 section#hero h1 {
     color: #1f2937; /* Dark text color for hero heading in light mode */
 }
@@ -65,7 +66,7 @@ body.dark section#hero p {
     color: #cbd5e1; /* Light medium text color for hero paragraph in dark mode */
 }
 
-/* Button styles in hero section */
+/* Button Styles in Hero Section */
 section#hero a {
     background-color: #1d4ed8; /* Blue background for button in light mode */
     color: #fff; /* White text color for button in light mode */
@@ -85,20 +86,39 @@ body.dark section#hero a:hover {
     background-color: #6b7280; /* Darker background on hover for button in dark mode */
 }
 
-/* General button styles for light and dark modes */
-button {
-    background-color: #4b5563; /* Dark background for button */
-    color: #fff; /* White text color for button */
+/* Download CV Button Specific Styles */
+a.download-cv {
+    background-color: #1d4ed8; /* Blue background for download button in light mode */
+    color: #fff; /* White text color for download button in light mode */
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
 }
 
-button:hover {
-    background-color: #6b7280; /* Darker background for button hover */
+a.download-cv:hover {
+    background-color: #2563eb; /* Darker blue background for download button hover in light mode */
 }
 
-body.dark button {
-    background-color: #374151; /* Darker button background for dark mode */
+body.dark a.download-cv {
+    background-color: #4b5563; /* Darker background for download button in dark mode */
+    color: #e2e8f0; /* Light text color for download button in dark mode */
 }
 
-body.dark button:hover {
-    background-color: #4b5563; /* Darker button background on hover for dark mode */
+body.dark a.download-cv:hover {
+    background-color: #6b7280; /* Darker background on hover for download button in dark mode */
+}
+
+/* About Section */
+section#about {
+    background-color: #ffffff; /* Light background for About section */
+    color: #333333; /* Dark text color for About section */
+}
+
+body.dark section#about {
+    background-color: #2d3748; /* Dark background for About section */
+    color: #e2e8f0; /* Light text color for About section */
+}
+
+body.dark section#about p {
+    color: #cbd5e1; /* Light medium text color for About section paragraphs in dark mode */
 }
