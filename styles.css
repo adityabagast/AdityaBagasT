@@ -242,3 +242,32 @@ footer {
     color: #f4f4f4;
     text-align: right;
 }
+
+.tools-container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 10px 0; /* Add some padding */
+    scrollbar-width: thin; /* Firefox */
+}
+
+.tools-container::-webkit-scrollbar {
+    height: 8px; /* Height of the scrollbar */
+}
+
+.tools-container::-webkit-scrollbar-thumb {
+    background-color: #444; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Round edges */
+}
+
+.tool {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Space between tools */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.tool-icon {
+    width: 40px; /* Set a fixed size for the icons */
+    height: 40px;
+    margin-right: 10px; /* Space between icon and text */
+}
