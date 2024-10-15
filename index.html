@@ -1,102 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aditya Bagas T | Web Developer</title>
-    <!-- Link ke Tailwind CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Portofolio Aditya Bagas T</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav id="navbar" class="bg-gray-800 text-white sticky top-0 shadow-md">
-        <div class="container mx-auto px-4 py-2 flex items-center justify-between">
-            <a href="#" class="text-xl font-bold">Aditya Bagas T</a>
-            <div class="space-x-4 flex items-center">
-                <a href="#hero" class="hover:text-gray-400">Home</a>
-                <a href="#about" class="hover:text-gray-400">About</a>
-                <a href="#portfolio" class="hover:text-gray-400">Portfolio</a>
-                <a href="#contact" class="hover:text-gray-400">Contact</a>
-                <a href="assets/files/CV_Aditya_Bagas_T.pdf" download class="download-cv">
-                    Download CV
-                </a>
-                <button id="theme-toggle" class="ml-4 p-2 bg-gray-700 rounded-full">
-                    <svg id="theme-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Icon untuk light mode -->
-                        <path id="icon-light" d="M12 4.354V3a1 1 0 10-2 0v1.354a9 9 0 000 16.292V21a1 1 0 102 0v-1.354a9 9 0 000-16.292zM12 12a5 5 0 11-5-5 5 5 0 015 5z"></path>
-                        <!-- Icon untuk dark mode -->
-                        <path id="icon-dark" class="hidden" d="M12 3a9 9 0 100 18 9 9 0 000-18z"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero" class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 h-screen flex items-center justify-center">
-        <div class="text-center">
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Hi, I'm Aditya Bagas T</h1>
-            <p class="text-xl mb-8">I'm a passionate web developer with a knack for creating sleek and functional websites. Welcome to my portfolio!</p>
-            <a href="#portfolio" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">See My Work</a>
-        </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section id="about" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 py-12">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">About Me</h2>
-            <p class="text-lg leading-relaxed mb-6">
-                I'm Aditya Bagas T, a web developer based in [Your City]. I specialize in building modern and responsive websites with a focus on clean design and optimized user experiences. My journey in web development started [X years ago], and since then, I have worked on various projects that have helped me hone my skills.
-            </p>
-            <p class="text-lg leading-relaxed mb-6">
-                I enjoy working with the latest web technologies and am always eager to learn new skills and take on new challenges. Whether it's front-end development, back-end development, or full-stack solutions, I'm passionate about creating web applications that meet client needs and exceed expectations.
-            </p>
-            <p class="text-lg leading-relaxed text-center">
-                Let's connect and create something amazing together!
-            </p>
-        </div>
-    </section>
-
-    <!-- Content -->
-    <div class="container mx-auto px-4 py-6">
-        <!-- Konten halaman akan dimasukkan di sini -->
+    <div class="sidebar">
+        <img id="github-profile-pic" src="" alt="Foto Profil GitHub" style="border-radius: 50%; width: 100px; height: 100px; display: none;">
+        <h1>Aditya Bagas T</h1>
+        <p>Web Developer | C# | PHP | Outsystems</p>
+        <nav>
+            <ul>
+                <li><a href="#about">Tentang Saya</a></li>
+                <li><a href="#projects">Proyek</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
     </div>
 
-    <!-- JavaScript untuk mengganti tema dan animasi scroll -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script>
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const themeIconLight = document.getElementById('icon-light');
-        const themeIconDark = document.getElementById('icon-dark');
+    <div class="main-content">
+        <header>
+            <h1>Selamat Datang di Portofolio Saya</h1>
+        </header>
 
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        if (currentTheme === 'dark') {
-            document.body.classList.add('dark');
-            themeIconLight.classList.add('hidden');
-            themeIconDark.classList.remove('hidden');
-        } else {
-            themeIconLight.classList.remove('hidden');
-            themeIconDark.classList.add('hidden');
-        }
+        <main>
+            <section id="about" class="section">
+                <h2>Tentang Saya</h2>
+                <p>Hello, World! My name Aditya Bagas T. I am currently studying at Batam State Polytechnic, with a strong foundation in informatic technology. I am a junior web developer with experience in web application development using various technologies. I am looking for opportunities as a full-stack developer or programming database management.</p>
+            </section>            
 
-        themeToggleBtn.addEventListener('click', () => {
-            document.body.classList.toggle('dark');
-            const isDarkMode = document.body.classList.contains('dark');
-            if (isDarkMode) {
-                localStorage.setItem('theme', 'dark');
-                themeIconLight.classList.add('hidden');
-                themeIconDark.classList.remove('hidden');
-            } else {
-                localStorage.setItem('theme', 'light');
-                themeIconLight.classList.remove('hidden');
-                themeIconDark.classList.add('hidden');
-            }
-        });
+            <section id="projects" class="section">
+                <h2>Proyek</h2>
+                <div class="project-card">
+                    <img src="assets/images/gatepass.jpg" alt="Website GATEPASS">
+                    <h3>Website GATEPASS</h3>
+                    <p>Aplikasi untuk pengelolaan izin keluar masuk barang. <strong>Teknologi:</strong> Outsystems Studio 11.</p>
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/produksi.jpg" alt="Website Produksi">
+                    <h3>Website Produksi di PT Schneider Electric</h3>
+                    <p>Aplikasi untuk memantau proses produksi di pabrik. <strong>Teknologi:</strong> C#, SQL Server.</p>
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/warehouse.jpg" alt="Website Pendataan Warehouse">
+                    <h3>Website Pendataan Warehouse</h3>
+                    <p>Aplikasi untuk mendata dan mengelola inventaris barang. <strong>Teknologi:</strong> C#, SQL Server.</p>
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/analytics.jpg" alt="Website Kanban Analytics">
+                    <h3>Website Kanban Analytics</h3>
+                    <p>Aplikasi untuk analisis data yang dihasilkan dari berbagai proses. <strong>Teknologi:</strong> C#, SQL Server.</p>
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/warehouse_pbl.jpg" alt="Website Warehouse PBL">
+                    <h3>Website Warehouse (PBL)</h3>
+                    <p>Aplikasi untuk mendata inventaris barang sebagai tugas Project Base Learning. <strong>Teknologi:</strong> PHP, MySQL.</p>
+                </div>
+            </section>
 
-        // Animasi scroll dengan ScrollReveal
-        ScrollReveal().reveal('#hero', { delay: 200, duration: 800 });
-        ScrollReveal().reveal('#about', { delay: 400, duration: 800 });
-    </script>
+            <section id="contact" class="section">
+                <h2>Kontak</h2>
+                <p>Email: adityabagast@gmail.com</p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/adityabagast" target="_blank">https://linkedin.com/in/adityabagast</a></p>
+                <p>GitHub: <a href="https://github.com/adityabagast" target="_blank">https://github.com/adityabagast</a></p>
+                <p><a href="assets/files/ADITYA BAGAS TRISWANTO.pdf" download class="btn">Download CV</a></p>
+            
+                <h3>Contact Us</h3>
+                <form id="contact-form">
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" name="name" required>
+            
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+            
+                    <label for="message">Pesan:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+            
+                    <button type="submit" class="btn">Kirim</button>
+                </form>
+            </section>            
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Aditya Bagas T</p>
+        </footer>
+    </div>
+
+    <script src="site.js"></script>
 </body>
 </html>
