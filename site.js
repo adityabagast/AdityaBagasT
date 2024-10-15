@@ -1,42 +1,61 @@
-require('dotenv').config(); // Tambahkan ini di bagian paling atas
-// Token dan nama pengguna GitHub
+// Mengambil nama pengguna GitHub
 const githubUsername = "adityabagast";
-const token = process.env.GITHUB_TOKEN; // Ambil token dari variabel lingkungan
 
-// Mengambil profil GitHub
-fetch(`https://api.github.com/users/${githubUsername}`, {
-    headers: {
-        'Authorization': `token ${token}`
-    }
-})
-.then(response => {
-    if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
-    }
-    return response.json();
-})
-.then(data => {
+// Cek dan ambil profil GitHub dari localStorage
+const cachedProfile = JSON.parse(localStorage.getItem('githubProfile'));
+if (cachedProfile) {
+    displayProfile(cachedProfile);
+} else {
+    // Mengambil profil GitHub
+    fetch(`https://api.github.com/users/${githubUsername}`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Simpan profil di localStorage
+        localStorage.setItem('githubProfile', JSON.stringify(data));
+        displayProfile(data);
+    })
+    .catch(error => {
+        console.error('Error fetching GitHub profile:', error);
+    });
+}
+
+// Fungsi untuk menampilkan profil GitHub
+function displayProfile(data) {
     const profilePic = document.getElementById('github-profile-pic');
     profilePic.src = data.avatar_url;
     profilePic.style.display = 'block';
-})
-.catch(error => {
-    console.error('Error fetching GitHub profile:', error);
-});
+}
 
-// Mengambil data repositori dari GitHub
-fetch(`https://api.github.com/users/${githubUsername}/repos`, {
-    headers: {
-        'Authorization': `token ${token}`
-    }
-})
-.then(response => {
-    if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
-    }
-    return response.json();
-})
-.then(repos => {
+// Cek dan ambil data repositori dari localStorage
+const cachedRepos = JSON.parse(localStorage.getItem('githubRepos'));
+if (cachedRepos) {
+    displayRepos(cachedRepos);
+} else {
+    // Mengambil data repositori dari GitHub
+    fetch(`https://api.github.com/users/${githubUsername}/repos`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(repos => {
+        // Simpan repositori di localStorage
+        localStorage.setItem('githubRepos', JSON.stringify(repos));
+        displayRepos(repos);
+    })
+    .catch(error => {
+        console.error('Error fetching GitHub repos:', error);
+    });
+}
+
+// Fungsi untuk menampilkan repositori dan tingkat bahasa
+function displayRepos(repos) {
     const languageCounts = {};
     
     repos.forEach(repo => {
@@ -46,6 +65,8 @@ fetch(`https://api.github.com/users/${githubUsername}/repos`, {
     });
 
     const languageLevelsContainer = document.getElementById('language-levels-container');
+    languageLevelsContainer.innerHTML = ''; // Kosongkan kontainer sebelum menambahkan
+
     for (const [language, count] of Object.entries(languageCounts)) {
         const percentage = (count / repos.length) * 100;
         const languageDiv = document.createElement('div');
@@ -60,22 +81,20 @@ fetch(`https://api.github.com/users/${githubUsername}/repos`, {
         `;
         languageLevelsContainer.appendChild(languageDiv);
     }
-})
-.catch(error => {
-    console.error('Error fetching GitHub repos:', error);
-});
+}
 
-const links = document.querySelectorAll('.sidebar nav ul li a');
+// Menangani pengiriman form kontak
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Mencegah pengiriman form
 
-links.forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+    // Mengambil data dari form
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
-        targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    });
+    // Melakukan aksi seperti mengirim email atau menyimpan data di server
+    console.log('Form submitted:', { name, email, message });
+    
+    // Reset form
+    document.getElementById('contact-form').reset();
 });
