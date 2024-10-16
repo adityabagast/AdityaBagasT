@@ -98,3 +98,19 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     // Reset form
     document.getElementById('contact-form').reset();
 });
+
+// Menangani tampilan sidebar untuk layar kecil
+const sidebar = document.querySelector('.sidebar');
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+
+hamburgerMenu.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+});
+
+// Menutup sidebar setelah klik pada link
+const sidebarLinks = document.querySelectorAll('.sidebar nav ul li a');
+sidebarLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+    });
+});

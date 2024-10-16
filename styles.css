@@ -192,16 +192,42 @@ footer {
 
 @media (max-width: 768px) {
     .sidebar {
-        width: 200px;
+        width: 100%; /* Menyesuaikan ukuran sidebar di perangkat kecil */
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.active {
+        transform: translateX(0); /* Tampilkan sidebar saat aktif */
     }
 
     .main-content {
-        margin-left: 200px;
+        margin-left: 0; /* Menghilangkan margin saat sidebar tertutup */
     }
 
-    .contact-info, 
-    .contact-form {
-        max-width: 100%;
+    .hamburger-menu {
+        display: block;
+        position: fixed; /* Ubah menjadi fixed */
+        top: 20px; /* Posisi dari atas */
+        right: 20px; /* Posisi dari kanan */
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 2000; /* Pastikan lebih tinggi dari profil GitHub */
+    }
+
+    .hamburger-menu i {
+        color: white; /* Mengubah warna ikon hamburger */
+    }
+}
+
+#github-profile-pic {
+    z-index: 2500; /* Pastikan profil tidak tertimpa elemen lain kecuali menu */
+}
+
+/* Style untuk perangkat besar (desktop) */
+@media (min-width: 769px) {
+    .hamburger-menu {
+        display: none; /* Sembunyikan hamburger di perangkat besar */
     }
 }
 
