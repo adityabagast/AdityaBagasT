@@ -146,3 +146,8 @@ sidebarLinks.forEach(link => {
         sidebar.classList.remove('active');
     });
 });
+
+function refreshPage()
+{
+    window.location.reload();
+}
