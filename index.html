@@ -15,12 +15,12 @@
     <div class="sidebar" id="sidebar">
         <img id="github-profile-pic" src="" alt="Foto Profil GitHub" style="border-radius: 50%; width: 100px; height: 100px; display: none;">
         <h1>Aditya Bagas T</h1>
-        <p>Web Developer | C# | PHP | Outsystems</p>
+        <p>Web Developer | C# ASP.NET Core | SQL Server</p>
         <nav>
             <ul>
                 <li><a href="#about">Tentang Saya</a></li>
                 <li><a href="#projects">Proyek</a></li>
-                <li><a href="#language-levels">Level Bahasa</a></li>
+                <li><a href="#tools">Tools</a></li> <!-- Tools section is kept -->
                 <li><a href="#contact">Kontak</a></li>
             </ul>
         </nav>
@@ -34,7 +34,7 @@
         <main>
             <section id="about" class="section">
                 <h2>Tentang Saya</h2>
-                <p>Hello, World! My name Aditya Bagas T. I am currently studying at Batam State Polytechnic, with a strong foundation in informatic technology. I am a junior web developer with experience in web application development using various technologies. I am looking for opportunities as a full-stack developer or programming database management.</p>
+                <p>Hello, World! My name Aditya Bagas T. I am currently studying at Batam State Polytechnic, with a strong foundation in informatic technology. I am a junior web developer with a focus on C# ASP.NET Core and SQL Server development. I am looking for opportunities as a full-stack developer in these technologies.</p>
             </section>            
 
             <section id="projects" class="section">
@@ -42,27 +42,27 @@
                 <div class="project-card">
                     <img src="assets/images/gatepass.png" alt="Website GATEPASS" class="project-image">
                     <h3>Website GATEPASS</h3>
-                    <p>Aplikasi untuk pengelolaan izin keluar masuk barang. <strong>Teknologi:</strong> Outsystems Studio 11.</p>
+                    <p>Aplikasi untuk pengelolaan izin keluar masuk barang. <strong>Teknologi:</strong> ASP.NET Core, SQL Server.</p>
                 </div>
                 <div class="project-card">
                     <img src="assets/images/cashadvance.png" alt="Website CASHADVANCE" class="project-image">
                     <h3>Website Cash In Advance</h3>
-                    <p>Aplikasi ini digunakan untuk memudahkan pengelolaan perjalanan dinas, mulai dari pengajuan permohonan hingga pelaporan pengeluaran. <strong>Teknologi:</strong> Outsystems Studio 11.</p>
+                    <p>Aplikasi ini digunakan untuk memudahkan pengelolaan perjalanan dinas, mulai dari pengajuan permohonan hingga pelaporan pengeluaran. <strong>Teknologi:</strong> ASP.NET Core, SQL Server.</p>
                 </div>
                 <div class="project-card">
                     <img src="assets/images/produksi.png" alt="Website Produksi" class="project-image">
                     <h3>Website Produksi di PT Schneider Electric</h3>
-                    <p>Aplikasi untuk memantau proses produksi di pabrik. <strong>Teknologi:</strong> C#, SQL Server.</p>
+                    <p>Aplikasi untuk memantau proses produksi di pabrik. <strong>Teknologi:</strong> ASP.NET Core, SQL Server.</p>
                 </div>
                 <div class="project-card">
                     <img src="assets/images/warehouse.png" alt="Website Pendataan Warehouse" class="project-image">
                     <h3>Website Pendataan Warehouse</h3>
-                    <p>Aplikasi untuk mendata dan mengelola inventaris barang. <strong>Teknologi:</strong> C#, SQL Server.</p>
+                    <p>Aplikasi untuk mendata dan mengelola inventaris barang. <strong>Teknologi:</strong> ASP.NET Core, SQL Server.</p>
                 </div>
                 <div class="project-card">
                     <img src="assets/images/kanban.png" alt="Website Kanban Analytics" class="project-image">
                     <h3>Website Kanban Analytics</h3>
-                    <p>Aplikasi untuk analisis data yang dihasilkan dari berbagai proses. <strong>Teknologi:</strong> C#, SQL Server.</p>
+                    <p>Aplikasi untuk analisis data yang dihasilkan dari berbagai proses. <strong>Teknologi:</strong> ASP.NET Core, SQL Server.</p>
                 </div>
                 <div class="project-card">
                     <img src="assets/images/warehouse_pbl.jpg" alt="Website Warehouse PBL" class="project-image">
@@ -71,17 +71,15 @@
                 </div>
             </section>
 
-            <section id="language-levels" class="section">
+            <section id="language-levels" class="section" style="display: none;"> <!-- Hidden since focusing on one language -->
                 <h2>Level Bahasa Pemrograman</h2>
                 <div id="language-levels-container">
-                    <!-- Contoh bar bahasa -->
                     <div class="language-level">
                     </div>
-                    <!-- Tambahkan lebih banyak bahasa sesuai kebutuhan -->
                 </div>
             </section>
 
-            <section id="tools" class="section">
+            <section id="tools" class="section"> <!-- Keep the Tools section -->
                 <h2>Tools yang Saya Gunakan</h2>
                 <div class="tools-container">
                     <div class="tool">
@@ -93,20 +91,8 @@
                         <span>Visual Studio 2022</span>
                     </div>
                     <div class="tool">
-                        <img src="assets/images/outsystems.png" alt="Outsystems Studio 11" class="tool-icon">
-                        <span>Outsystems Studio 11</span>
-                    </div>
-                    <div class="tool">
                         <img src="assets/images/sqlserver.png" alt="SQL Server" class="tool-icon">
                         <span>SQL Server</span>
-                    </div>
-                    <div class="tool">
-                        <img src="assets/images/httpie.png" alt="HTTPie" class="tool-icon">
-                        <span>HTTPie</span>
-                    </div>
-                    <div class="tool">
-                        <img src="assets/images/edge.png" alt="Edge" class="tool-icon">
-                        <span>Edge</span>
                     </div>
                     <div class="tool">
                         <img src="assets/images/git.png" alt="Git" class="tool-icon">
@@ -151,7 +137,7 @@
                             <label for="message">Pesan:</label>
                             <textarea id="message" name="message" rows="4" required></textarea>
                             
-                            <p style="font-style: italic; color: #666;">Please provide as much detail as possible so I can best assist you.</p> <!-- Catatan ditambahkan di sini -->
+                            <p style="font-style: italic; color: #666;">Please provide as much detail as possible so I can best assist you.</p>
                             
                             <button type="submit" class="btn">Kirim</button>
                         </form>
