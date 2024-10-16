@@ -92,11 +92,43 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
 
-    // Melakukan aksi seperti mengirim email atau menyimpan data di server
-    console.log('Form submitted:', { name, email, message });
-    
-    // Reset form
-    document.getElementById('contact-form').reset();
+    // Kirim data ke Formspree
+    fetch(this.action, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message })
+    })
+    .then(response => {
+        if (response.ok) {
+            // Menampilkan umpan balik menggunakan SweetAlert
+            Swal.fire({
+                icon: 'success',
+                title: 'Pesan Terkirim!',
+                text: 'Terima kasih telah menghubungi saya. Saya akan segera merespons pesan Anda.',
+                confirmButtonText: 'OK'
+            });
+            this.reset(); // Reset form
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Terjadi Kesalahan',
+                text: 'Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.',
+                confirmButtonText: 'OK'
+            });
+        }
+    })
+    .catch(error => {
+        console.error('Error sending form:', error);
+        Swal.fire({
+            icon: 'error',
+            title: 'Terjadi Kesalahan',
+            text: 'Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.',
+            confirmButtonText: 'OK'
+        });
+    });
 });
 
 // Menangani tampilan sidebar untuk layar kecil

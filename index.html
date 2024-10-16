@@ -6,6 +6,7 @@
     <title>Portofolio Aditya Bagas T</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="hamburger-menu" id="hamburger-menu">
@@ -39,27 +40,32 @@
             <section id="projects" class="section">
                 <h2>Proyek</h2>
                 <div class="project-card">
-                    <img src="assets/images/gatepass.jpg" alt="Website GATEPASS">
+                    <img src="assets/images/gatepass.png" alt="Website GATEPASS" class="project-image">
                     <h3>Website GATEPASS</h3>
                     <p>Aplikasi untuk pengelolaan izin keluar masuk barang. <strong>Teknologi:</strong> Outsystems Studio 11.</p>
                 </div>
                 <div class="project-card">
-                    <img src="assets/images/produksi.jpg" alt="Website Produksi">
+                    <img src="assets/images/cashadvance.png" alt="Website CASHADVANCE" class="project-image">
+                    <h3>Website Cash In Advance</h3>
+                    <p>Aplikasi ini digunakan untuk memudahkan pengelolaan perjalanan dinas, mulai dari pengajuan permohonan hingga pelaporan pengeluaran. <strong>Teknologi:</strong> Outsystems Studio 11.</p>
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/produksi.png" alt="Website Produksi" class="project-image">
                     <h3>Website Produksi di PT Schneider Electric</h3>
                     <p>Aplikasi untuk memantau proses produksi di pabrik. <strong>Teknologi:</strong> C#, SQL Server.</p>
                 </div>
                 <div class="project-card">
-                    <img src="assets/images/warehouse.jpg" alt="Website Pendataan Warehouse">
+                    <img src="assets/images/warehouse.png" alt="Website Pendataan Warehouse" class="project-image">
                     <h3>Website Pendataan Warehouse</h3>
                     <p>Aplikasi untuk mendata dan mengelola inventaris barang. <strong>Teknologi:</strong> C#, SQL Server.</p>
                 </div>
                 <div class="project-card">
-                    <img src="assets/images/analytics.jpg" alt="Website Kanban Analytics">
+                    <img src="assets/images/kanban.png" alt="Website Kanban Analytics" class="project-image">
                     <h3>Website Kanban Analytics</h3>
                     <p>Aplikasi untuk analisis data yang dihasilkan dari berbagai proses. <strong>Teknologi:</strong> C#, SQL Server.</p>
                 </div>
                 <div class="project-card">
-                    <img src="assets/images/warehouse_pbl.jpg" alt="Website Warehouse PBL">
+                    <img src="assets/images/warehouse_pbl.jpg" alt="Website Warehouse PBL" class="project-image">
                     <h3>Website Warehouse (PBL)</h3>
                     <p>Aplikasi untuk mendata inventaris barang sebagai tugas Project Base Learning. <strong>Teknologi:</strong> PHP, MySQL.</p>
                 </div>
@@ -135,21 +141,24 @@
                     
                     <div class="contact-form">
                         <h3>Hubungi Saya</h3>
-                        <form id="contact-form">
+                        <form id="contact-form" action="https://formspree.io/f/xovqqkvo" method="POST">
                             <label for="name">Nama:</label>
                             <input type="text" id="name" name="name" required>
-                
+            
                             <label for="email">Email:</label>
                             <input type="email" id="email" name="email" required>
-                
+            
                             <label for="message">Pesan:</label>
                             <textarea id="message" name="message" rows="4" required></textarea>
-                
+                            
+                            <p style="font-style: italic; color: #666;">Please provide as much detail as possible so I can best assist you.</p> <!-- Catatan ditambahkan di sini -->
+                            
                             <button type="submit" class="btn">Kirim</button>
                         </form>
                     </div>
                 </div>
-            </section>          
+            </section>
+                                 
         </main>
 
         <footer>
